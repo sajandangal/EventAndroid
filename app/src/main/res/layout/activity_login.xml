@@ -1,239 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:gravity="center"
     android:layout_height="match_parent"
-    android:background="#fff"
     tools:context=".activity.LoginActivity">
 
-    <TextView
-        android:id="@+id/textView"
+    <ImageView
+        android:layout_width="178dp"
+        android:layout_height="166dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/logo_softwarica" />
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="wrap_content">
 
-        android:text="Event Schedular"
-        android:layout_marginBottom="25dp"
-        android:textAlignment="center"
-        android:textColor="#000"
-        android:textSize="55sp"
-        app:layout_constraintBottom_toTopOf="@+id/etUsername"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etUsername"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:hint="Username"
+            android:singleLine="true"
+            android:textSize="15sp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".45" />
-
-
-    <EditText
-        android:id="@+id/etUsername"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content">
 
-        android:paddingHorizontal="15dp"
-        android:textColor="#444"
-        android:textColorHint="#888"
-        android:layout_marginBottom="20dp"
-        android:textSize="16sp"
-        android:singleLine="true"
-        android:layout_marginHorizontal="20dp"
-        android:hint="Phone number, email or username"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/etPassword"/>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPassword"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:hint="Password"
+            android:singleLine="true"
 
-
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:textSize="16sp"
-        android:paddingHorizontal="15dp"
-        android:layout_marginHorizontal="20dp"
-        android:textColor="#444"
-        android:textColorHint="#888"
-        android:singleLine="true"
-        android:hint="Password"
-
-        android:inputType="textPassword"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/guideline"/>
-
+            android:inputType="textPassword"
+            android:textSize="15sp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="20dp"
-
-        android:text="Log In"
-        android:textAllCaps="false"
-        android:textColor="#fff"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
-
-
-    <LinearLayout
-        android:id="@+id/layoutSignIn"
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
-        android:layout_marginTop="15dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/btnLogin"
-        app:layout_constraintStart_toStartOf="@id/btnLogin"
-        app:layout_constraintTop_toBottomOf="@+id/btnLogin">
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:maxLines="1"
-            android:text="Forgot your login details?"
-            android:textColor="#777" />
-
-
-        <TextView
-            android:id="@+id/tvHelpSignIn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:maxLines="1"
-            android:paddingLeft="5dp"
-            android:text="Get help sigining in."
-            android:textColor="#0D153D"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
-
-<!--    <TextView-->
-<!--        android:id="@+id/tvForBtn"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-
-<!--        android:drawablePadding="3dp"-->
-<!--        android:text="Log in as @sajand"-->
-<!--        android:textAllCaps="false"-->
-<!--        android:textColor="#fff"-->
-<!--        android:textStyle="bold"-->
-<!--        android:elevation="3dp"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/btnLoginWithFb"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/btnLoginWithFb"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/btnLoginWithFb"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/btnLoginWithFb"/>-->
-
-
-<!--    <Button-->
-<!--        android:id="@+id/btnLoginWithFb"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginHorizontal="20dp"-->
-<!--        android:layout_marginTop="20dp"-->
-
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/layoutSignIn" />-->
-
-    <RelativeLayout
-        android:id="@+id/layoutForOr"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical|center_horizontal"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintTop_toBottomOf="@+id/btnLoginWithFb"
-        tools:layout_editor_absoluteX="19dp">
-
-        <View
-            android:id="@+id/line1"
-            android:layout_width="wrap_content"
-            android:layout_height="2dp"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/tvOr"
-            android:background="#c0c0c0" />
-
-
-        <View
-            android:id="@+id/line2"
-            android:layout_width="wrap_content"
-            android:layout_height="2dp"
-            android:layout_centerVertical="true"
-            android:layout_toLeftOf="@+id/tvOr"
-            android:background="#c0c0c0" />
-
-    </RelativeLayout>
-
-    <LinearLayout
-        android:id="@+id/layoutSignUn"
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
-        android:layout_marginTop="15dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/btnLogin"
-        app:layout_constraintStart_toStartOf="@id/btnLogin"
-        app:layout_constraintTop_toBottomOf="@+id/layoutForOr">
-
-
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:gravity="center"-->
-<!--            android:textColor="#777"-->
-<!--            android:text="Dont have an account?" />-->
-
-
-        <TextView
-            android:id="@+id/tvSignUp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:maxLines="1"
-            android:paddingLeft="5dp"
-            android:text="Sign up."
-            android:textColor="#0D153D"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
-    <View
-        android:id="@+id/lineEnd"
-        android:layout_width="match_parent"
-        android:layout_height="0.6dp"
-        android:layout_centerVertical="true"
-        android:background="#c0c0c0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
+        android:layout_margin="15dp"
+        android:background="@drawable/roundedbutton"
+        android:text="Login"
+        android:textColor="#FFFFFF" />
 
     <TextView
-        android:id="@+id/tvOr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="OR"
-        android:textColor="#777"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="204dp"
-        tools:layout_editor_absoluteY="66dp" />
+        android:id="@+id/tvSignup"
+        android:textSize="20sp"
+        android:layout_margin="15dp"
+        android:textColor="#2C52F9"
+        android:text="No account ? Sign up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
-    <!--    <TextView-->
-<!--        android:id="@+id/tvInstaFromFb"-->
-<!--        android:padding="16dp"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Instagram from Facebook"-->
-<!--        android:gravity="center"-->
-<!--        android:textColor="#777"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"/>-->
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

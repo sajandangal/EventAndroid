@@ -1,5 +1,7 @@
 package com.example.eventscheduler.activity;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -8,94 +10,56 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.eventscheduler.LoginApi;
 import com.example.eventscheduler.R;
-import com.example.eventscheduler.Url;
-import com.example.eventscheduler.model.UserModel;
+import com.example.eventscheduler.bll.LoginBLL;
+import com.example.eventscheduler.strictmode.StrictModeClass;
+import com.example.eventscheduler.url.Url;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+public class LoginActivity extends AppCompatActivity {
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
-
-    Button btnLogin, btnLoginWithFb;
-    EditText username, password;
-    TextView signup, forgot;
-
+    private Button btnLogin;
+    private EditText etUsername, etPassword;
+    private TextView tvSignup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_login);
-//
-//        username = findViewById(R.id.etUsername);
-//        password = findViewById(R.id.etPassword);
-//        signup = findViewById(R.id.tvSignUp);
-//        forgot = findViewById(R.id.tvHelpSignIn);
-//        btnLogin = findViewById(R.id.btnLogin);
-//        btnLoginWithFb = findViewById(R.id.btnLoginWithFb);
-//
-//        signup.setOnClickListener(this);
-//        forgot.setOnClickListener(this);
-//        btnLogin.setOnClickListener(this);
-//        btnLoginWithFb.setOnClickListener(this);
+        setContentView(R.layout.activity_login);
 
+        etUsername = findViewById(R.id.etUsername);
+        etPassword = findViewById(R.id.etPassword);
+        tvSignup = findViewById(R.id.tvSignup);
+        btnLogin = findViewById(R.id.btnLogin);
+
+        tvSignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                login(); }
+        });
     }
 
+    private void login() {
+        String username = etUsername.getText().toString();
+        String password = etPassword.getText().toString();
 
+        LoginBLL loginBLL = new LoginBLL();
 
-    @Override
-    public void onClick(View v) {
-//        switch (v.getId()){
-//            case R.id.tvSignUp:
-//                openSignUp();
-//                break;
-//            case R.id.tvHelpSignIn:
-//                Toast.makeText(this, "Go to Change Password", Toast.LENGTH_SHORT).show();
-//                break;
-//            case R.id.btnLogin:
-//                login();
-//                break;
-//            case R.id.btnLoginWithFb:
-//                Toast.makeText(this, "Login with facebook", Toast.LENGTH_SHORT).show();
-//                break;
-//        }
+        StrictModeClass.StrictMode();
+        if (loginBLL.checkUser(username, password)) {
+            Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
+            startActivity(intent);
+            finish();
+        } else {
+            Toast.makeText(this, "Either username or password is incorrect", Toast.LENGTH_SHORT).show();
+            etUsername.requestFocus();
+        }
     }
-
-    public void login(){
-//        UserModel userLogin = new UserModel(username.getText().toString(), password.getText().toString());
-//
-//        LoginApi loginApi = Url.getInstance().create(LoginApi.class);
-//        Call<Void> loginCall =loginApi.login(userLogin);
-//
-//        loginCall.enqueue(new Callback<Void>() {
-//            @Override
-//            public void onResponse(Call<Void> call, Response<Void> response) {
-//                if(!response.isSuccessful()){
-//                    Toast.makeText(LoginActivity.this, "Login Error", Toast.LENGTH_SHORT).show();
-//                    return;
-//                }
-//                openDashBoard();
-//            }
-//
-//            @Override
-//            public void onFailure(Call<Void> call, Throwable t) {
-//                Toast.makeText(LoginActivity.this, "Error " + t.getLocalizedMessage() , Toast.LENGTH_SHORT).show();
-//            }
-//        });
-    }
-
-    public void openDashBoard(){
-//        Intent openDash = new Intent(this, MainActivity.class);
-//        startActivity(openDash);
-    }
-
-    public void openSignUp(){
-//        Intent openSignup = new Intent(this, RegisterActivity.class);
-//        startActivity(openSignup);
-    }
-
 }
