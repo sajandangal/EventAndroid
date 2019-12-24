@@ -15,7 +15,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);//will hide the title
-        getSupportActionBar().hide(); //hide the title bar
+        getSupportActionBar().hide(); //hide the title bars
         setContentView(R.layout.activity_splash);
 
         Handler handler = new Handler();
