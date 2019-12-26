@@ -7,12 +7,12 @@
     android:orientation="vertical"
     tools:context=".activity.DashboardActivity">
 
-    <ImageView
-        android:layout_gravity="center"
-        android:src="@drawable/noimage"
-        android:id="@+id/imgProgileImg"
-        android:layout_width="150dp"
-        android:layout_height="150dp"/>
+<!--    <ImageView-->
+<!--        android:layout_gravity="center"-->
+<!--        android:src="@drawable/noimage"-->
+<!--        android:id="@+id/imgProgileImg"-->
+<!--        android:layout_width="150dp"-->
+<!--        android:layout_height="150dp"/>-->
 
     <LinearLayout
         android:orientation="horizontal"
@@ -26,8 +26,25 @@
             android:text="ADD Notes"
             android:layout_height="wrap_content"/>
         <Button
+            android:id="@+id/btnView"
             android:layout_width="wrap_content"
             android:text="View Notes"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="wrap_content"
+            android:text="Logout"
+
+            android:layout_weight="1"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnUserprofile"
+            android:layout_width="wrap_content"
+            android:text="Profile"
+
             android:layout_weight="1"
             android:layout_height="wrap_content"/>
 
