@@ -43,7 +43,7 @@ public class AddEventActivity extends AppCompatActivity {
 
         EventAPI noteAPI = Url.getInstance().create(EventAPI.class);
 
-        Call<Void> voidCall = noteAPI.addTask(Url.token,etNote.getText().toString());
+        Call<Void> voidCall = noteAPI.addEvent(Url.token,etNote.getText().toString());
 
         voidCall.enqueue(new Callback<Void>() {
             @Override
