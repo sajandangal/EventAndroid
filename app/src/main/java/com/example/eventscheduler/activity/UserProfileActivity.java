@@ -41,7 +41,7 @@ public class UserProfileActivity extends AppCompatActivity {
 
 
     }
-    private void loadCurrentUser() {
+    public void loadCurrentUser() {
         //user token access here from URL
         final UsersAPI usersAPI = Url.getInstance().create(UsersAPI.class);
         final Call<User> userCall = usersAPI.getUserDetails(token);
