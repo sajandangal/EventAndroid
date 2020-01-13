@@ -19,10 +19,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.eventscheduler.R;
 
 import com.example.eventscheduler.api.UsersAPI;
+import com.example.eventscheduler.fragments.addEventFragment;
+import com.example.eventscheduler.fragments.homeFragment;
+import com.example.eventscheduler.fragments.profileFragment;
+import com.example.eventscheduler.fragments.viewEventFragment;
 import com.example.eventscheduler.model.User;
 import com.example.eventscheduler.strictmode.StrictModeClass;
 import com.example.eventscheduler.url.Url;
@@ -58,6 +63,11 @@ ImageView imgProgileImg;
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_dashboard);
+        getSupportActionBar().hide();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportFragmentManager().beginTransaction();
+        getSupportFragmentManager().beginTransaction().replace(R.id.framelayout,new homeFragment()).commit();
+
         mDrawerLayout= (DrawerLayout) findViewById(R.id.drawyerlayout);
         NavigationView navigationView=findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -79,47 +89,53 @@ ImageView imgProgileImg;
 
 
 
-        findViewById(R.id.btnAdd).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(DashboardActivity.this, AddEventActivity.class));
-            }
-        });
-
-        findViewById(R.id.btnView).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(DashboardActivity.this, ViewEventActivity.class));
-            }
-        });
-
-        findViewById(R.id.btnLogout).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(token!="Bearer "){
-                    token="Bearer ";
-
-                }
-
-                    Intent intent = new Intent(DashboardActivity.this,SplashActivity.class);
-
-                    startActivity(intent);
-                    finish();
-            }
-        });
-
-        findViewById(R.id.btnUserprofile).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i=new Intent(DashboardActivity.this,UserProfileActivity.class);
-                startActivity(i);
-                finish();
-            }
-        });
-
-
+//        findViewById(R.id.btnAdd).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(DashboardActivity.this, AddEventActivity.class));
+//            }
+//        });
+//
+//        findViewById(R.id.btnView).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(DashboardActivity.this, ViewEventActivity.class));
+//            }
+//        });
+//
+//        findViewById(R.id.btnLogout).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if(token!="Bearer "){
+//                    token="Bearer ";
+//
+//                }
+//
+//                    Intent intent = new Intent(DashboardActivity.this,SplashActivity.class);
+//
+//                    startActivity(intent);
+//                    finish();
+//            }
+//        });
+//
+//        findViewById(R.id.btnUserprofile).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent i=new Intent(DashboardActivity.this,UserProfileActivity.class);
+//                startActivity(i);
+//                finish();
+//            }
+//        });
 
 
+
+
+    }
+
+    public void setFragment(Fragment fragment){
+        FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(frameLayout.getId(),fragment);
+        fragmentTransaction.commit();
     }
 
     @Override
@@ -128,21 +144,22 @@ ImageView imgProgileImg;
 
         switch (menuItem.getItemId()){
             case R.id.addEvent:
-                Intent i=new Intent(DashboardActivity.this,AddEventActivity.class);
-                startActivity(i);
-                //getSupportFragmentManager().beginTransaction().replace(R.id.framelayout,new DashboardFragment()).commit();
+//                Intent i=new Intent(DashboardActivity.this,AddEventActivity.class);
+//                startActivity(i);
+
+                getSupportFragmentManager().beginTransaction().replace(R.id.framelayout,new addEventFragment()).commit();
 
                 break;
 //
             case R.id.Cart:
-                Intent in=new Intent(DashboardActivity.this,ViewEventActivity.class);
-                startActivity(in);
-               // getSupportFragmentManager().beginTransaction().replace(R.id.framelayout,new CartFragment()).commit();
-                break;
+//                Intent in=new Intent(DashboardActivity.this,ViewEventActivity.class);
+//                startActivity(in);
+                getSupportFragmentManager().beginTransaction().replace(R.id.framelayout,new viewEventFragment()).commit();
+               break;
             case  R.id.Account:
                 Intent inte=new Intent(DashboardActivity.this,UserProfileActivity.class);
                 startActivity(inte);
-                //getSupportFragmentManager().beginTransaction().replace(R.id.framelayout,new AccountFragment()).commit();
+          //   getSupportFragmentManager().beginTransaction().replace(R.id.framelayout,new profileFragment()).commit();
                 break;
 
             case R.id.Logout:

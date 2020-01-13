@@ -67,7 +67,7 @@ public class SignupActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (etSignUpPassword.getText().toString().equals(etConfirmPassword.getText().toString())) {
                     if(validate()) {
-                       // saveImageOnly();
+                        saveImageOnly();
                         signUp();
                     }
                 } else {
