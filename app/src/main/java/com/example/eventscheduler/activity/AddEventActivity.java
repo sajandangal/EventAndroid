@@ -21,6 +21,10 @@ public class AddEventActivity extends AppCompatActivity {
 
     Button btnAddNotes;
     EditText etNote;
+    EditText etDesc;
+    EditText etLocation;
+    private String imageName = "";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +33,7 @@ public class AddEventActivity extends AppCompatActivity {
 
         btnAddNotes = findViewById(R.id.btnAddNote);
         etNote = findViewById(R.id.etNote);
-
+        etDesc=findViewById(R.id.etDesc);
         btnAddNotes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,7 +47,7 @@ public class AddEventActivity extends AppCompatActivity {
 
         EventAPI noteAPI = Url.getInstance().create(EventAPI.class);
 
-        Call<Void> voidCall = noteAPI.addEvent(Url.token,etNote.getText().toString());
+        Call<Void> voidCall = noteAPI.addEvent(Url.token,etNote.getText().toString(),etDesc.getText().toString(),imageName,etLocation.getText().toString());
 
         voidCall.enqueue(new Callback<Void>() {
             @Override

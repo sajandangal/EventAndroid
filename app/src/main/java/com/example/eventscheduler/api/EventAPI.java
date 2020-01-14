@@ -1,5 +1,6 @@
 package com.example.eventscheduler.api;
 
+import com.example.eventscheduler.model.Category;
 import com.example.eventscheduler.model.Event;
 
 import java.util.List;
@@ -15,9 +16,12 @@ public interface EventAPI {
 
     @FormUrlEncoded
     @POST("events")
-    Call<Void> addEvent(@Header("Authorization")String token, @Field("name") String event);
+    Call<Void> addEvent(@Header("Authorization")String token, @Field("name") String event, @Field("desc") String event1,@Field("image") String event2,@Field("location") String event3);
 
     @GET("events")
     Call<List<Event>> getEvent(@Header("Authorization")String token);
+
+    @GET("categories")
+    Call<List<Category>> getCategory(@Header("Authorization")String token);
 
 }
