@@ -32,44 +32,44 @@
 <!--        android:layout_width="150dp"-->
 <!--        android:layout_height="150dp"/>-->
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+<!--    <LinearLayout-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
 
-        <Button
-            android:id="@+id/btnAdd"
-            android:layout_width="wrap_content"
-            android:layout_weight="1"
-            android:text="ADD Events"
-            android:layout_marginTop="50dp"
-            android:layout_height="wrap_content"/>
-        <Button
-            android:id="@+id/btnView"
-            android:layout_width="wrap_content"
-            android:text="View Events"
-            android:layout_weight="1"
-            android:layout_marginTop="50dp"
-            android:layout_height="wrap_content"/>
+<!--        <Button-->
+<!--            android:id="@+id/btnAdd"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:text="ADD Events"-->
+<!--            android:layout_marginTop="50dp"-->
+<!--            android:layout_height="wrap_content"/>-->
+<!--        <Button-->
+<!--            android:id="@+id/btnView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="View Events"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_marginTop="50dp"-->
+<!--            android:layout_height="wrap_content"/>-->
 
-        <Button
-            android:id="@+id/btnLogout"
-            android:layout_width="wrap_content"
-            android:text="Logout"
-            android:layout_marginTop="50dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"/>
+<!--        <Button-->
+<!--            android:id="@+id/btnLogout"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="Logout"-->
+<!--            android:layout_marginTop="50dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="wrap_content"/>-->
 
-        <Button
-            android:id="@+id/btnUserprofile"
-            android:layout_width="wrap_content"
-            android:text="Profile"
-            android:layout_marginTop="50dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"/>
+<!--        <Button-->
+<!--            android:id="@+id/btnUserprofile"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:text="Profile"-->
+<!--            android:layout_marginTop="50dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="wrap_content"/>-->
 
 
-    </LinearLayout>
+<!--    </LinearLayout>-->
 
 
     <com.google.android.material.navigation.NavigationView
