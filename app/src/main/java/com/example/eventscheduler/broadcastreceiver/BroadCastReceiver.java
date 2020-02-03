@@ -65,4 +65,6 @@ public class BroadCastReceiver extends BroadcastReceiver {
         notificationManagerCompat.notify(2,notification);
     }
 
+    aaaa
+
 }
