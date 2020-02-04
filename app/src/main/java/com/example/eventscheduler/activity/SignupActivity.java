@@ -1,7 +1,10 @@
 package com.example.eventscheduler.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -16,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.loader.content.CursorLoader;
 
 import com.example.eventscheduler.R;
+import com.example.eventscheduler.Sensor.ShakeDetector;
 import com.example.eventscheduler.api.UsersAPI;
 import com.example.eventscheduler.model.User;
 import com.example.eventscheduler.serverresponse.ImageResponse;
@@ -39,6 +43,10 @@ public class SignupActivity extends AppCompatActivity {
     private EditText etFirstName, etLastName, etSignUpUsername, etSignUpPassword, etConfirmPassword;
     private Button btnSignup;
     String imagePath;
+    private ShakeDetector mShakeDetector;
+    private SensorManager mSensorManager;
+    private Sensor mAccelerometer;
+
     private String imageName = "";
 
     @Override
@@ -55,7 +63,19 @@ public class SignupActivity extends AppCompatActivity {
         etSignUpPassword = findViewById(R.id.etSignUpPassword);
         etConfirmPassword = findViewById(R.id.etConfirmPassword);
         btnSignup = findViewById(R.id.btnSignup);
+        mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 
+        mShakeDetector = new ShakeDetector(new ShakeDetector.OnShakeListener() {
+            @Override
+            public void onShake() {
+                etFirstName.setText("");
+                etLastName.setText("");
+                etSignUpUsername.setText("");
+                etSignUpPassword.setText("");
+                etConfirmPassword.setText("");
+            }
+        });
         imgProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,6 +98,18 @@ public class SignupActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mSensorManager.registerListener(mShakeDetector, mAccelerometer, SensorManager.SENSOR_DELAY_UI);
+    }
+
+    @Override
+    protected void onPause() {
+        mSensorManager.unregisterListener(mShakeDetector);
+        super.onPause();
     }
 
     private boolean validate() {
@@ -167,10 +199,10 @@ public class SignupActivity extends AppCompatActivity {
             }
 
             @Override
-//            public void onFailure(Call<SignUpResponse> call, Throwable t) {
-//                Toast.makeText(SignupActivity.this, "Error" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-//            }
-//        });
+            public void onFailure(Call<SignUpResponse> call, Throwable t) {
+                Toast.makeText(SignupActivity.this, "Error" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 }
