@@ -167,10 +167,10 @@ public class SignupActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<SignUpResponse> call, Throwable t) {
-                Toast.makeText(SignupActivity.this, "Error" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
+//            public void onFailure(Call<SignUpResponse> call, Throwable t) {
+//                Toast.makeText(SignupActivity.this, "Error" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
     }
 }
