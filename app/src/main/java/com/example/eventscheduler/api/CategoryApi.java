@@ -18,4 +18,6 @@ public interface CategoryApi {
     @GET("categories")
     Call<List<Category>> getCategory(@Header("Authorization")String token);
 
+    snsjnfcsncnsjn
+
 }
