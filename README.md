@@ -24,9 +24,9 @@ Source code and video links can be found at below.
 
 | Platforms      | Links                                                               |
 | -------------- | ------------------------------------------------------------------- |
-| Github Android | [https://github.com/stw300cem/stw300cem-final-project-nupXD] |
-| Github API     | [https://github.com/stw304cem/t2-backend-api-nupXD]          |
-| Youtube        | [https://www.youtube.com/watch?v=NfjaY4VwLns] 
+| Github Android | [https://github.com/stw300cem/stw300cem-final-assignment-sajandangal-1] |
+| Github API     | []          |
+| Youtube        | [] 
 
 # REST CLIENT
 
