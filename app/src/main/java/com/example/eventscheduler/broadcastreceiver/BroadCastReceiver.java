@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package com.example.eventscheduler.broadcastreceiver;
+=======
+package com.example.eventschedulerfinal.broadcastreceiver;
+>>>>>>> origin/master
 
 import android.app.Notification;
 import android.content.BroadcastReceiver;
@@ -10,8 +14,13 @@ import android.widget.Toast;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+<<<<<<< HEAD
 import com.example.eventscheduler.R;
 import com.example.eventscheduler.createChannel.CreateChannel;
+=======
+import com.example.eventschedulerfinal.R;
+import com.example.eventschedulerfinal.createChannel.CreateChannel;
+>>>>>>> origin/master
 
 public class BroadCastReceiver extends BroadcastReceiver {
     private NotificationManagerCompat notificationManagerCompat;
