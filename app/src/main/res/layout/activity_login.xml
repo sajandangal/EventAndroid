@@ -47,7 +47,7 @@
             android:inputType="textPassword"
             android:textSize="15sp" />
     </com.google.android.material.textfield.TextInputLayout>
-
+git
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
