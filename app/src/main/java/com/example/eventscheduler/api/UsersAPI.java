@@ -1,8 +1,11 @@
 package com.example.eventscheduler.api;
 
+import com.example.eventscheduler.model.Event;
 import com.example.eventscheduler.model.User;
 import com.example.eventscheduler.serverresponse.ImageResponse;
 import com.example.eventscheduler.serverresponse.SignUpResponse;
+
+import java.util.List;
 
 import okhttp3.MultipartBody;
 import retrofit2.Call;
@@ -30,5 +33,10 @@ public interface UsersAPI {
 
     @GET("users/me")
     Call<User> getUserDetails(@Header("Authorization")String token);
+
+    @GET("users/all")
+    Call<List<User>> getUsers(@Header("Authorization")String token);
+
+
 
 }

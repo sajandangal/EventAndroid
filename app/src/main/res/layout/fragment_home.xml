@@ -11,19 +11,7 @@
 
 
 
-        <EditText
-            android:id="@+id/src"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
 
-            android:drawableLeft="@drawable/search2"
-            android:drawablePadding="20dp"
-            android:focusable="true"
-            android:hint="Search"
-            android:padding="10dp" />
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
