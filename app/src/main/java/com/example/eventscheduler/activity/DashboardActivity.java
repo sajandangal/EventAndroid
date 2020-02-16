@@ -176,7 +176,7 @@ ImageView imgProgileImg;
                 break;
 
 
-            case  R.id.Map:
+            case id.map:
                 Intent inten=new Intent(DashboardActivity.this,MapsActivity.class);
                 startActivity(inten);
                 //   getSupportFragmentManager().beginTransaction().replace(R.id.framelayout,new profileFragment()).commit();

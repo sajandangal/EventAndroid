@@ -108,6 +108,8 @@ public class SignupActivity extends AppCompatActivity {
                     if(validate()) {
                         saveImageOnly();
                         signUp();
+                        Intent i=new Intent(SignupActivity.this,DashboardActivity.class);
+                        startActivity(i);
                     }
                 } else {
                     Toast.makeText(SignupActivity.this, "Password does not match", Toast.LENGTH_SHORT).show();

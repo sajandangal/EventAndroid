@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:name="android.support.PARENT_ACTIVITY"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:context=".activity.SignupActivity">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/uProfile"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/noimage" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ufirstName"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:hint="First Name"
+                    android:singleLine="true"
+                    android:textSize="15sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ulastName"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:hint="LastName"
+                    android:singleLine="true"
+                    android:textSize="15sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/UpUsername"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:hint="Username ( Minimum 6 character )"
+                    android:singleLine="true"
+                    android:textSize="15sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content">-->
+
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:id="@+id/UpPassword"-->
+<!--                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="20dp"-->
+<!--                    android:hint="Password"-->
+<!--                    android:inputType="textPassword"-->
+<!--                    android:singleLine="true"-->
+<!--                    android:textSize="15sp" />-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content">-->
+
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:id="@+id/uConfirmPassword"-->
+<!--                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="20dp"-->
+<!--                    android:hint="Confirm Password"-->
+<!--                    android:inputType="textPassword"-->
+<!--                    android:singleLine="true"-->
+<!--                    android:textSize="15sp" />-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+            <Button
+                android:id="@+id/btnUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@drawable/roundedbutton"
+                android:text="Update"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        app:headerLayout="@layout/header"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="#ffff"
+        app:menu="@menu/sidebar"
+        android:layout_gravity="start"
+        />
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
