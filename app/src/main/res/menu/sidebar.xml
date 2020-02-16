@@ -2,6 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <item android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/ic_menu_black_24dp"/>
     <item android:id="@+id/addEvent"
         android:title="Add Event"
         android:icon="@drawable/add"
@@ -10,6 +13,14 @@
         android:title="View Event"
         android:icon="@drawable/view"
         app:showAsAction="always"/>
+    <item android:id="@+id/iEvents"
+        android:title="Involved Events"
+        android:icon="@drawable/view"
+        app:showAsAction="always"/>
+    <item android:id="@+id/Map"
+        android:title="Your Location"
+        android:icon="@drawable/location" />
+
     <item android:id="@+id/Account"
         android:title="Profile"
         android:icon="@drawable/prof" />
