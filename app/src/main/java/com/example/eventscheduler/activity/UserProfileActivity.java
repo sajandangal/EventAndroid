@@ -3,6 +3,10 @@ package com.example.eventscheduler.activity;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+<<<<<<< HEAD
+=======
+import android.util.Log;
+>>>>>>> origin/testing
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +21,7 @@ import com.example.eventscheduler.R;
 import com.example.eventscheduler.api.UsersAPI;
 import com.example.eventscheduler.fragments.UpdateProfile;
 import com.example.eventscheduler.model.User;
+import com.example.eventscheduler.serverresponse.SignUpResponse;
 import com.example.eventscheduler.strictmode.StrictModeClass;
 import com.example.eventscheduler.url.Url;
 import com.google.android.material.navigation.NavigationView;
@@ -24,6 +29,7 @@ import com.google.android.material.navigation.NavigationView;
 import java.io.InputStream;
 import java.net.URL;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -88,6 +94,7 @@ public class UserProfileActivity extends AppCompatActivity implements Navigation
 
 
     ImageView imgProgileImg;
+    String uid;
     //Button btnlogout;
     TextView fname;
     TextView lname;
@@ -96,6 +103,10 @@ public class UserProfileActivity extends AppCompatActivity implements Navigation
     Button btnUpdate;
     TextView finame;
     TextView liname;
+<<<<<<< HEAD
+=======
+    private String imageName = "";
+>>>>>>> origin/testing
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,7 +122,13 @@ public class UserProfileActivity extends AppCompatActivity implements Navigation
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+<<<<<<< HEAD
                 Toast.makeText(UserProfileActivity.this,"Update",Toast.LENGTH_SHORT).show();
+=======
+               // updateUser();
+                Toast.makeText(UserProfileActivity.this,"Update",Toast.LENGTH_SHORT).show();
+
+>>>>>>> origin/testing
             }
         });
 //        mDrawerLayout= (DrawerLayout) findViewById(R.id.drawyerlayout);
@@ -142,10 +159,15 @@ public class UserProfileActivity extends AppCompatActivity implements Navigation
                     Toast.makeText(UserProfileActivity.this, "Code " + response.code(), Toast.LENGTH_SHORT).show();
                     return;
                 }
+                //String userid=response.body().getId();
                 String imgPath = Url.imagePath +  response.body().getImage();
                 String firstName = response.body().getFirstName();
                 String lastName= response.body().getLastName();
                 String userName= response.body().getUsername();
+<<<<<<< HEAD
+=======
+                //uid.equals(userid);
+>>>>>>> origin/testing
                 fname.setText(firstName);
                 lname.setText(lastName);
                 uname.setText(userName);
@@ -172,6 +194,8 @@ public class UserProfileActivity extends AppCompatActivity implements Navigation
                 Toast.makeText(UserProfileActivity.this, "Error " + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+<<<<<<< HEAD
+=======
 
 
     }
@@ -233,10 +257,117 @@ public class UserProfileActivity extends AppCompatActivity implements Navigation
                 logout();
                 break;
 
+>>>>>>> origin/testing
 
 
         }
 
         return true;
+    }
+    private void updateUser(){
+
+
+
+        Log.d("hello", "Click bhayo!");
+
+
+<<<<<<< HEAD
+
+    private void logout(){
+        if(Url.token!="Bearer "){
+            Url.token="Bearer ";
+        }
+        Intent i=new Intent(UserProfileActivity.this,LoginActivity.class);
+        startActivity(i);
+    }
+
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        int id=menuItem.getItemId();
+
+
+        switch (menuItem.getItemId()){
+            case R.id.home:
+                Intent intn=new Intent(UserProfileActivity.this,DashboardActivity.class);
+                startActivity(intn);
+                break;
+            case R.id.addEvent:
+                Intent i=new Intent(UserProfileActivity.this,AddEventActivity.class);
+                startActivity(i);
+
+    //            getSupportFragmentManager().beginTransaction().replace(R.id.framelayout,new addEventFragment()).commit();
+
+                break;
+//
+            case R.id.Cart:
+                Intent in=new Intent(UserProfileActivity.this,ViewEventActivity.class);
+                startActivity(in);
+//                getSupportFragmentManager().beginTransaction().replace(R.id.framelayout,new viewEventFragment()).commit();
+                break;
+
+            case R.id.iEvents:
+                Intent ine = new Intent(UserProfileActivity.this, NotificationActivity.class);
+                startActivity(ine);
+                //           getSupportFragmentManager().beginTransaction().replace(R.id.framelayout,new viewEventFragment()).commit();
+                break;
+
+            case  R.id.Map:
+                Intent inten=new Intent(UserProfileActivity.this,MapsActivity.class);
+                startActivity(inten);
+                //   getSupportFragmentManager().beginTransaction().replace(R.id.framelayout,new profileFragment()).commit();
+                break;
+            case  R.id.Account:
+                Intent inte=new Intent(UserProfileActivity.this,UserProfileActivity.class);
+                startActivity(inte);
+                //   getSupportFragmentManager().beginTransaction().replace(R.id.framelayout,new profileFragment()).commit();
+                break;
+
+            case R.id.Logout:
+                Toast.makeText(UserProfileActivity.this,"Logged Out",Toast.LENGTH_SHORT).show();
+                logout();
+                break;
+
+
+
+        }
+
+        return true;
+=======
+        UsersAPI usersAPI = Url.getInstance().create(UsersAPI.class);
+        //Call<SignUpResponse> signUpCall = usersAPI.updateProfile(token,user);
+
+        User user = new User(uid.toString(),fname.getText().toString(),lname.getText().toString(), uname.getText().toString(),imageName);
+//        Call<ResponseBody> call = userInterface.updateProfile(user);
+        Call<ResponseBody> call = usersAPI.updateProfile(token, user);
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+
+
+                Log.d("val", "sucess: ");
+
+                if (response.isSuccessful()) {
+
+                    Toast.makeText(UserProfileActivity.this, "profile updated success", Toast.LENGTH_SHORT).show();
+                } else {
+                    try {
+                        Toast.makeText(UserProfileActivity.this, response.errorBody().string(), Toast.LENGTH_LONG).show();
+                        Log.d("errr", response.errorBody().string() );
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+                Log.d("VAL", t.getLocalizedMessage());
+            }
+        });
+>>>>>>> origin/testing
     }
 }

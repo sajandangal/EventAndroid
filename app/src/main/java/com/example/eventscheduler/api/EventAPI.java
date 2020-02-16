@@ -29,4 +29,10 @@ public interface EventAPI {
 //    @GET("notifications")
 //    Call<List<Notification>> getNotification(@Header("Authorization")String token);
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> origin/testing
 }

@@ -126,10 +126,10 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         String username = etUsername.getText().toString();
         String password = etPassword.getText().toString();
 
-        LoginBLL loginBLL = new LoginBLL();
+        LoginBLL loginBLL = new LoginBLL(username, password);
 
         StrictModeClass.StrictMode();
-        if (loginBLL.checkUser(username, password)) {
+        if (loginBLL.checkUser()) {
             Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
             SPsave();
             DisplayNotification();

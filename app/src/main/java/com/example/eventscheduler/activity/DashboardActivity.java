@@ -46,6 +46,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+<<<<<<< HEAD
+=======
+import static com.example.eventscheduler.R.*;
+import static com.example.eventscheduler.R.string.*;
+>>>>>>> origin/testing
 import static com.example.eventscheduler.url.Url.token;
 
 public class DashboardActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -68,25 +73,45 @@ ImageView imgProgileImg;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+<<<<<<< HEAD
         setContentView(R.layout.activity_dashboard);
 
+=======
+        setContentView(layout.activity_dashboard);
 
-        mDrawerLayout= (DrawerLayout) findViewById(R.id.drawyerlayout);
-        NavigationView navigationView=findViewById(R.id.nav_view);
+
+
+        mDrawerLayout= (DrawerLayout) findViewById(id.drawyerlayout);
+        mToggle= new ActionBarDrawerToggle(this, mDrawerLayout,  open, close);
+>>>>>>> origin/testing
+
+        mDrawerLayout.addDrawerListener(mToggle);
+        mToggle.syncState();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        NavigationView navigationView=findViewById(id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         View header=navigationView.getHeaderView(0);
+<<<<<<< HEAD
+
+=======
+>>>>>>> origin/testing
 
 
 
-        imgProgileImg= header.findViewById(R.id.Img);
-        finame=header.findViewById(R.id.Name);
-        lname=header.findViewById(R.id.lName);
+        imgProgileImg= header.findViewById(id.Img);
+        finame=header.findViewById(id.Name);
+        lname=header.findViewById(id.lName);
         //imgProgileImg = navigationView.findViewById(R.id.imgProgileImg);
       //  fname = navigationView.findViewById(R.id.btnName);
        // lname=navigationView.findViewById(R.id.btnlName);
 
+<<<<<<< HEAD
         cat_recyclerview= findViewById(R.id.cat_recyclerview);
         rv_events= findViewById(R.id.recyproduct);
+=======
+        cat_recyclerview= findViewById(id.cat_recyclerview);
+        rv_events= findViewById(id.recyproduct);
+>>>>>>> origin/testing
         loadCurrentUser();
         //getAllEvents();
         getAllCategory();
@@ -127,6 +152,14 @@ ImageView imgProgileImg;
 
 
     }
+    public boolean onOptionsItemSelected(MenuItem item){
+        if(mToggle.onOptionsItemSelected(item)){
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
 
 
 
@@ -162,7 +195,11 @@ ImageView imgProgileImg;
                 break;
 
 
+<<<<<<< HEAD
             case  R.id.Map:
+=======
+            case id.map:
+>>>>>>> origin/testing
                 Intent inten=new Intent(DashboardActivity.this,MapsActivity.class);
                 startActivity(inten);
                 //   getSupportFragmentManager().beginTransaction().replace(R.id.framelayout,new profileFragment()).commit();
@@ -290,7 +327,11 @@ ImageView imgProgileImg;
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater=getMenuInflater();
         inflater.inflate(R.menu.example_item,menu);
+<<<<<<< HEAD
         MenuItem searchItem=menu.findItem(R.id.action_search);
+=======
+        MenuItem searchItem=menu.findItem(id.action_search);
+>>>>>>> origin/testing
         SearchView searchView =(SearchView) searchItem.getActionView();
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
