@@ -1,9 +1,9 @@
 Online event scheduling system is a software project that serves the functionality of an event manager. The system allows only registered users to login and new users can resister on the application. The project provides most of the basic functionality required for an event. It allows the user to select from a list of event types. 
 # Features
-•	User registration |
-•	User login |
-•	Users can post events |
-•	Users can view all the events |
+•	User registration 
+•	User login 
+•	Users can post events 
+•	Users can view all the events 
 •	Selected user gets the events as involved
 
 # Aim
