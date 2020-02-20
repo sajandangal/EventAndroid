@@ -6,65 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-<<<<<<< HEAD
-    tools:context=".activity.AddEventActivity">
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/imgEvent"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:src="@drawable/noimage" />
-
-            <EditText
-                android:id="@+id/etNote"
-                android:layout_margin="20dp"
-                android:textSize="20sp"
-                android:hint="Event Name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <EditText
-                android:id="@+id/etDesc"
-                android:inputType="textMultiLine"
-                android:layout_margin="20dp"
-                android:textSize="20sp"
-                android:hint="Description"
-                android:lines="8"
-                android:minLines="6"
-                android:gravity="top|left"
-                android:maxLines="10"
-
-                android:scrollbars="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <EditText
-                android:id="@+id/etLoc"
-                android:layout_margin="20dp"
-                android:textSize="20sp"
-                android:hint="Location"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <Button
-                android:layout_margin="20dp"
-                android:textSize="20sp"
-                android:text="Add Note"
-                android:id="@+id/btnAddNote"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-        </LinearLayout>
-    </ScrollView>
-=======
     android:background="#ffffff"
     tools:context=".activity.AddEventActivity">
 
@@ -123,7 +64,6 @@
 
 <!--        </LinearLayout>-->
 <!--    </ScrollView>-->
->>>>>>> origin/testing
 
 
 

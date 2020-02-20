@@ -46,11 +46,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-<<<<<<< HEAD
-=======
 import static com.example.eventscheduler.R.*;
 import static com.example.eventscheduler.R.string.*;
->>>>>>> origin/testing
 import static com.example.eventscheduler.url.Url.token;
 
 public class DashboardActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -72,18 +69,16 @@ ImageView imgProgileImg;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        loadCurrentUser();
+        getAllEvents();
+        getAllCategory();
 
-<<<<<<< HEAD
-        setContentView(R.layout.activity_dashboard);
-
-=======
         setContentView(layout.activity_dashboard);
 
 
 
         mDrawerLayout= (DrawerLayout) findViewById(id.drawyerlayout);
         mToggle= new ActionBarDrawerToggle(this, mDrawerLayout,  open, close);
->>>>>>> origin/testing
 
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
@@ -91,10 +86,6 @@ ImageView imgProgileImg;
         NavigationView navigationView=findViewById(id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         View header=navigationView.getHeaderView(0);
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/testing
 
 
 
@@ -105,48 +96,10 @@ ImageView imgProgileImg;
       //  fname = navigationView.findViewById(R.id.btnName);
        // lname=navigationView.findViewById(R.id.btnlName);
 
-<<<<<<< HEAD
-        cat_recyclerview= findViewById(R.id.cat_recyclerview);
-        rv_events= findViewById(R.id.recyproduct);
-=======
         cat_recyclerview= findViewById(id.cat_recyclerview);
         rv_events= findViewById(id.recyproduct);
->>>>>>> origin/testing
-        loadCurrentUser();
-        //getAllEvents();
-        getAllCategory();
-        EventAPI eventAPI= Url.getInstance().create(EventAPI.class);
-        Call<List<Event>> listCall=eventAPI.getEvent(Url.token);
-
-        listCall.enqueue(new Callback<List<Event>>() {
-            @Override
-            public void onResponse(Call<List<Event>> call, Response<List<Event>> response) {
-                if(!response.isSuccessful()){
-                    Toast.makeText(DashboardActivity.this, "Code " + response.code(), Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                eventList=response.body();
-
-                for (Event event: eventList){
-                    Log.d("Events","onResponse :"+event.toString());
-                }
-
-                eventsAdapter = new EventAdapter(DashboardActivity.this,eventList);
-                rv_events.setAdapter(eventsAdapter);
-                rv_events.setLayoutManager(new LinearLayoutManager(DashboardActivity.this));
 
 
-            }
-
-
-
-
-
-            @Override
-            public void onFailure(Call<List<Event>> call, Throwable t) {
-                Toast.makeText(DashboardActivity.this, "Error : " + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
 
 
 
@@ -158,8 +111,6 @@ ImageView imgProgileImg;
         }
         return super.onOptionsItemSelected(item);
     }
-
-
 
 
 
@@ -195,11 +146,7 @@ ImageView imgProgileImg;
                 break;
 
 
-<<<<<<< HEAD
-            case  R.id.Map:
-=======
-            case id.map:
->>>>>>> origin/testing
+            case R.id.Map:
                 Intent inten=new Intent(DashboardActivity.this,MapsActivity.class);
                 startActivity(inten);
                 //   getSupportFragmentManager().beginTransaction().replace(R.id.framelayout,new profileFragment()).commit();
@@ -286,7 +233,40 @@ ImageView imgProgileImg;
 
     }
 
+    private void getAllEvents(){
+        EventAPI eventAPI= Url.getInstance().create(EventAPI.class);
+        Call<List<Event>> listCall=eventAPI.getEvent(Url.token);
 
+        listCall.enqueue(new Callback<List<Event>>() {
+            @Override
+            public void onResponse(Call<List<Event>> call, Response<List<Event>> response) {
+                if(!response.isSuccessful()){
+                    Toast.makeText(DashboardActivity.this, "Code " + response.code(), Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                eventList=response.body();
+
+                for (Event event: eventList){
+                    Log.d("Events","onResponse :"+event.toString());
+                }
+
+                eventsAdapter = new EventAdapter(DashboardActivity.this,eventList);
+                rv_events.setAdapter(eventsAdapter);
+                rv_events.setLayoutManager(new LinearLayoutManager(DashboardActivity.this));
+
+
+            }
+
+
+
+
+
+            @Override
+            public void onFailure(Call<List<Event>> call, Throwable t) {
+                Toast.makeText(DashboardActivity.this, "Error : " + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 
     private void getAllCategory(){
         CategoryApi categoryApi= Url.getInstance().create(CategoryApi.class);
@@ -327,11 +307,7 @@ ImageView imgProgileImg;
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater=getMenuInflater();
         inflater.inflate(R.menu.example_item,menu);
-<<<<<<< HEAD
-        MenuItem searchItem=menu.findItem(R.id.action_search);
-=======
         MenuItem searchItem=menu.findItem(id.action_search);
->>>>>>> origin/testing
         SearchView searchView =(SearchView) searchItem.getActionView();
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -348,4 +324,6 @@ ImageView imgProgileImg;
         });
         return true;
     }
+
+
 }

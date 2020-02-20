@@ -3,10 +3,7 @@ package com.example.eventscheduler.activity;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-<<<<<<< HEAD
-=======
 import android.util.Log;
->>>>>>> origin/testing
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -103,10 +100,7 @@ public class UserProfileActivity extends AppCompatActivity implements Navigation
     Button btnUpdate;
     TextView finame;
     TextView liname;
-<<<<<<< HEAD
-=======
     private String imageName = "";
->>>>>>> origin/testing
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,13 +116,9 @@ public class UserProfileActivity extends AppCompatActivity implements Navigation
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-<<<<<<< HEAD
-                Toast.makeText(UserProfileActivity.this,"Update",Toast.LENGTH_SHORT).show();
-=======
                // updateUser();
                 Toast.makeText(UserProfileActivity.this,"Update",Toast.LENGTH_SHORT).show();
 
->>>>>>> origin/testing
             }
         });
 //        mDrawerLayout= (DrawerLayout) findViewById(R.id.drawyerlayout);
@@ -164,10 +154,7 @@ public class UserProfileActivity extends AppCompatActivity implements Navigation
                 String firstName = response.body().getFirstName();
                 String lastName= response.body().getLastName();
                 String userName= response.body().getUsername();
-<<<<<<< HEAD
-=======
                 //uid.equals(userid);
->>>>>>> origin/testing
                 fname.setText(firstName);
                 lname.setText(lastName);
                 uname.setText(userName);
@@ -194,84 +181,11 @@ public class UserProfileActivity extends AppCompatActivity implements Navigation
                 Toast.makeText(UserProfileActivity.this, "Error " + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-<<<<<<< HEAD
-=======
 
 
     }
 
 
-
-    private void logout(){
-        if(Url.token!="Bearer "){
-            Url.token="Bearer ";
-        }
-        Intent i=new Intent(UserProfileActivity.this,LoginActivity.class);
-        startActivity(i);
-    }
-
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        int id=menuItem.getItemId();
-
-
-        switch (menuItem.getItemId()){
-            case R.id.home:
-                Intent intn=new Intent(UserProfileActivity.this,DashboardActivity.class);
-                startActivity(intn);
-                break;
-            case R.id.addEvent:
-                Intent i=new Intent(UserProfileActivity.this,AddEventActivity.class);
-                startActivity(i);
-
-    //            getSupportFragmentManager().beginTransaction().replace(R.id.framelayout,new addEventFragment()).commit();
-
-                break;
-//
-            case R.id.Cart:
-                Intent in=new Intent(UserProfileActivity.this,ViewEventActivity.class);
-                startActivity(in);
-//                getSupportFragmentManager().beginTransaction().replace(R.id.framelayout,new viewEventFragment()).commit();
-                break;
-
-            case R.id.iEvents:
-                Intent ine = new Intent(UserProfileActivity.this, NotificationActivity.class);
-                startActivity(ine);
-                //           getSupportFragmentManager().beginTransaction().replace(R.id.framelayout,new viewEventFragment()).commit();
-                break;
-
-            case  R.id.Map:
-                Intent inten=new Intent(UserProfileActivity.this,MapsActivity.class);
-                startActivity(inten);
-                //   getSupportFragmentManager().beginTransaction().replace(R.id.framelayout,new profileFragment()).commit();
-                break;
-            case  R.id.Account:
-                Intent inte=new Intent(UserProfileActivity.this,UserProfileActivity.class);
-                startActivity(inte);
-                //   getSupportFragmentManager().beginTransaction().replace(R.id.framelayout,new profileFragment()).commit();
-                break;
-
-            case R.id.Logout:
-                Toast.makeText(UserProfileActivity.this,"Logged Out",Toast.LENGTH_SHORT).show();
-                logout();
-                break;
-
->>>>>>> origin/testing
-
-
-        }
-
-        return true;
-    }
-    private void updateUser(){
-
-
-
-        Log.d("hello", "Click bhayo!");
-
-
-<<<<<<< HEAD
 
     private void logout(){
         if(Url.token!="Bearer "){
@@ -333,7 +247,14 @@ public class UserProfileActivity extends AppCompatActivity implements Navigation
         }
 
         return true;
-=======
+    }
+    private void updateUser(){
+
+
+
+        Log.d("hello", "Click bhayo!");
+
+
         UsersAPI usersAPI = Url.getInstance().create(UsersAPI.class);
         //Call<SignUpResponse> signUpCall = usersAPI.updateProfile(token,user);
 
@@ -368,6 +289,5 @@ public class UserProfileActivity extends AppCompatActivity implements Navigation
                 Log.d("VAL", t.getLocalizedMessage());
             }
         });
->>>>>>> origin/testing
     }
 }

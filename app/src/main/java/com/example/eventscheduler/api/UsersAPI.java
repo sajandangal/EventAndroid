@@ -36,12 +36,9 @@ public interface UsersAPI {
     @GET("users/me")
     Call<User> getUserDetails(@Header("Authorization")String token);
 
-<<<<<<< HEAD
-=======
     @PUT("/users/profile")
     Call<ResponseBody> updateProfile (@Header("Authorization") String token , @Body User user);
 
->>>>>>> origin/testing
     @GET("users/all")
     Call<List<User>> getUsers(@Header("Authorization")String token);
 

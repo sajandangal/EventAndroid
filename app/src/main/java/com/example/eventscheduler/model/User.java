@@ -40,14 +40,7 @@ public class User {
         this.image = image;
     }
 
-<<<<<<< HEAD
-    public User(String id, String username) {
-        this.id = id;
-        this.username = username;
-    }
-=======
 
->>>>>>> origin/testing
 
     public String getId() {
         return id;

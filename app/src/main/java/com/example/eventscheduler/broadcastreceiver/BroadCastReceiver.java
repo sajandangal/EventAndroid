@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 package com.example.eventscheduler.broadcastreceiver;
-=======
-package com.example.eventschedulerfinal.broadcastreceiver;
->>>>>>> origin/master
-=======
-package com.example.eventscheduler.broadcastreceiver;
->>>>>>> origin/testing
 
 import android.app.Notification;
 import android.content.BroadcastReceiver;
@@ -18,18 +10,8 @@ import android.widget.Toast;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 import com.example.eventscheduler.R;
 import com.example.eventscheduler.createChannel.CreateChannel;
-=======
-import com.example.eventschedulerfinal.R;
-import com.example.eventschedulerfinal.createChannel.CreateChannel;
->>>>>>> origin/master
-=======
-import com.example.eventscheduler.R;
-import com.example.eventscheduler.createChannel.CreateChannel;
->>>>>>> origin/testing
 
 public class BroadCastReceiver extends BroadcastReceiver {
     private NotificationManagerCompat notificationManagerCompat;
@@ -63,11 +45,7 @@ public class BroadCastReceiver extends BroadcastReceiver {
 
     private void DisplayNotification() {
         Notification notification=new NotificationCompat.Builder(context, CreateChannel.CHANNEL_1)
-<<<<<<< HEAD
-                .setSmallIcon(R.drawable.ic_shopping_cart_black_24dp)
-=======
                 .setSmallIcon(R.drawable.add)
->>>>>>> origin/testing
                 .setContentTitle("Event Scheduler")
                 .setContentText("No internet connection, please connect")
                 .setCategory(NotificationCompat.CATEGORY_SYSTEM)
@@ -78,11 +56,7 @@ public class BroadCastReceiver extends BroadcastReceiver {
 
     private void DisplayNotification2() {
         Notification notification=new NotificationCompat.Builder(context, CreateChannel.CHANNEL_1)
-<<<<<<< HEAD
-                .setSmallIcon(R.drawable.ic_shopping_cart_black_24dp)
-=======
                 .setSmallIcon(R.drawable.add)
->>>>>>> origin/testing
                 .setContentTitle("Event Scheduler")
                 .setContentText("You have been connected to a network")
                 .setCategory(NotificationCompat.CATEGORY_MESSAGE)
@@ -91,9 +65,6 @@ public class BroadCastReceiver extends BroadcastReceiver {
         notificationManagerCompat.notify(2,notification);
     }
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> origin/testing
 }

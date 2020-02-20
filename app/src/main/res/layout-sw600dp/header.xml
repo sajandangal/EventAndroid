@@ -3,20 +3,14 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="180dp"
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/testing
    >
     <de.hdodenhof.circleimageview.CircleImageView
 
     android:layout_width="wrap_content"
     android:layout_height="120dp"
     android:src="@mipmap/ic_launcher_round"
-<<<<<<< HEAD
-=======
         android:background="#008577"
->>>>>>> origin/testing
     android:id="@+id/Img"
     />
 
@@ -25,19 +19,13 @@
         android:layout_width="wrap_content"
         android:layout_height="10dp"
         android:layout_weight="1"
-<<<<<<< HEAD
-=======
         android:layout_gravity="center"
->>>>>>> origin/testing
         android:text="name" />
 <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="Email"
-<<<<<<< HEAD
-=======
     android:layout_gravity="center"
->>>>>>> origin/testing
     android:id="@+id/lName"/>
 
 

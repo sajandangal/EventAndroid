@@ -15,10 +15,7 @@ public interface NotificationApi {
 
 //    @GET("events/id")
 //    Call<List<Notification>> getEventbyid(@Header("Authorization")String token);
-<<<<<<< HEAD
-=======
 
 
 
->>>>>>> origin/testing
 }

@@ -17,11 +17,7 @@
         android:title="Involved Events"
         android:icon="@drawable/view"
         app:showAsAction="always"/>
-<<<<<<< HEAD
     <item android:id="@+id/Map"
-=======
-    <item android:id="@+id/map"
->>>>>>> origin/testing
         android:title="Your Location"
         android:icon="@drawable/location" />
 
