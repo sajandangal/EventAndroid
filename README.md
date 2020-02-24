@@ -26,7 +26,7 @@ Source code and video links can be found at below.
 | -------------- | ------------------------------------------------------------------- |
 | Github Android | [https://github.com/stw300cem/stw300cem-final-assignment-sajandangal-1] |
 | Github API     | [https://github.com/sajandangal/BackendforAndroid]          |
-| Youtube        | [https://youtu.be/RbNsFPaFwYw] 
+| Youtube        | [https://youtu.be/-t3pj-kMCMY] 
 
 # REST CLIENT
 
