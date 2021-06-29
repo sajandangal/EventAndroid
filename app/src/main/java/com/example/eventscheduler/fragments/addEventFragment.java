@@ -146,28 +146,28 @@ public class addEventFragment extends Fragment {
         String desc = etDesc.getText().toString();
         String location = etLocation.getText().toString();
         //String password = etSignUpPassword.getText().toString();
-        Event event= new Event(name,desc,imageName,location);
+        //Event event= new Event(name,desc,imageName,location);
 
         EventAPI noteAPI = Url.getInstance().create(EventAPI.class);
 
-        Call<Void> voidCall = noteAPI.addEvent(Url.token,etNote.getText().toString(),etDesc.getText().toString(),imageName,etLocation.getText().toString());
+      //  Call<Void> voidCall = noteAPI.addEvent(Url.token,etNote.getText().toString(),etDesc.getText().toString(),imageName,etLocation.getText().toString());
 
-        voidCall.enqueue(new Callback<Void>() {
-            @Override
-            public void onResponse(Call<Void> call, Response<Void> response) {
-                if (!response.isSuccessful()) {
-                    //  Toast.makeText(AddEventActivity.this, "Code : " + response.code() + ", Message : " + response.message(), Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                Toast.makeText(getContext(), "Added", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onFailure(Call<Void> call, Throwable t) {
-                // Toast.makeText(AddEventActivity.this, "Error " + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-
-            }
-        });
+     //   voidCall.enqueue(new Callback<Void>() {
+//            @Override
+//            public void onResponse(Call<Void> call, Response<Void> response) {
+//                if (!response.isSuccessful()) {
+//                    //  Toast.makeText(AddEventActivity.this, "Code : " + response.code() + ", Message : " + response.message(), Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
+//                Toast.makeText(getContext(), "Added", Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onFailure(Call<Void> call, Throwable t) {
+//                // Toast.makeText(AddEventActivity.this, "Error " + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+//
+//            }
+//        });
 
 
 
